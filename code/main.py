@@ -1,6 +1,7 @@
 import pygame as py
 import sys
 from settings import *
+from level import Level
 #from debug import debug
 
 class Game:
@@ -9,7 +10,10 @@ class Game:
         #Configuracion general
         py.init()
         self.screen = py.display.set_mode((WIDTH,HEIGTH))
+        self.title = py.display.set_caption('Lost Souls')
         self.clock = py.time.Clock()
+
+        self.level = Level()
 
     def run(self):
         while True:
@@ -20,6 +24,7 @@ class Game:
 
             self.screen.fill('black')
             #debug('Hello :)')
+            self.level.run()
             py.display.update()
             self.clock.tick(FPS)
 
