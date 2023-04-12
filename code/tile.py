@@ -6,5 +6,9 @@ class Tile(py.sprite.Sprite):
         super().__init__(groups)
         self.sprites_type = sprite_type
         self.image = surface
-        self.rect = self.image.get_rect(topleft = pos)
+        if sprite_type == 'object':
+            # offset
+            self.rect = self.image.get_rect(topleft = (pos[0], pos[1] - TILESIZE))
+        else:
+            self.rect = self.image.get_rect(topleft = pos)
         self.hitbox = self.rect.inflate(0,-10) #change the size of the tile
