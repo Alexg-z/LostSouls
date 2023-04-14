@@ -9,7 +9,7 @@ class Game:
 		# general setup
 		py.init()
 		self.screen = py.display.set_mode((WIDTH,HEIGTH))
-		py.display.set_caption('Zelda')
+		py.display.set_caption('Lost Souls')
 		self.clock = py.time.Clock()
 
 		self.level = Level()
